@@ -1,11 +1,17 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="92930a52-8802-4ec8-8a2c-8fb39bab261e" name="Default Changelist" comment="" />
+    <list default="true" id="92930a52-8802-4ec8-8a2c-8fb39bab261e" name="Default Changelist" comment="">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/sketch.js" beforeDir="false" afterPath="$PROJECT_DIR$/sketch.js" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
     <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
   <component name="ProjectId" id="21aevVKHLMVylxCAzwDQARXTd1U" />
   <component name="ProjectViewState">
@@ -19,13 +25,17 @@
     <property name="nodejs_npm_path_reset_for_default_project" value="true" />
     <property name="vue.rearranger.settings.migration" value="true" />
   </component>
-  <component name="RunManager">
+  <component name="RunManager" selected="JavaScript Debug.index.html">
     <configuration name="index.html" type="JavascriptDebugType" temporary="true" nameIsGenerated="true" uri="http://localhost:63343/p5js-cv-edge-detection/index.html" useBuiltInWebServerPort="true">
+      <method v="2" />
+    </configuration>
+    <configuration name="sketch.js" type="NodeJSConfigurationType" temporary="true" nameIsGenerated="true" path-to-js-file="$PROJECT_DIR$/sketch.js" working-dir="$PROJECT_DIR$">
       <method v="2" />
     </configuration>
     <recent_temporary>
       <list>
         <item itemvalue="JavaScript Debug.index.html" />
+        <item itemvalue="Node.js.sketch.js" />
       </list>
     </recent_temporary>
   </component>
@@ -38,10 +48,30 @@
       <option name="presentableId" value="Default" />
       <updated>1638183855814</updated>
       <workItem from="1638183856859" duration="9262000" />
+      <workItem from="1638262600363" duration="80000" />
+      <workItem from="1638262774853" duration="9980000" />
     </task>
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
     <option name="version" value="3" />
+  </component>
+  <component name="WindowStateProjectService">
+    <state width="1376" height="260" key="GridCell.Tab.0.bottom" timestamp="1638268442553">
+      <screen x="0" y="0" width="2752" height="1112" />
+    </state>
+    <state width="1376" height="260" key="GridCell.Tab.0.bottom/0.0.2752.1112@0.0.2752.1112" timestamp="1638268442553" />
+    <state width="1376" height="260" key="GridCell.Tab.0.center" timestamp="1638268442553">
+      <screen x="0" y="0" width="2752" height="1112" />
+    </state>
+    <state width="1376" height="260" key="GridCell.Tab.0.center/0.0.2752.1112@0.0.2752.1112" timestamp="1638268442553" />
+    <state width="1376" height="260" key="GridCell.Tab.0.left" timestamp="1638268442553">
+      <screen x="0" y="0" width="2752" height="1112" />
+    </state>
+    <state width="1376" height="260" key="GridCell.Tab.0.left/0.0.2752.1112@0.0.2752.1112" timestamp="1638268442553" />
+    <state width="1376" height="260" key="GridCell.Tab.0.right" timestamp="1638268442553">
+      <screen x="0" y="0" width="2752" height="1112" />
+    </state>
+    <state width="1376" height="260" key="GridCell.Tab.0.right/0.0.2752.1112@0.0.2752.1112" timestamp="1638268442553" />
   </component>
 </project>
