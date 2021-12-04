@@ -1,7 +1,32 @@
 html, body {
   margin: 0;
   padding: 0;
+  background: #151515;
+  color: white;
+  position: relative
 }
+.title {
+  display: flex;
+  color: white;
+  justify-content: space-around;
+}
+
+.main {
+  color: white;
+  z-index: 1;
+  position: fixed;
+  margin-left: 35%;
+  margin-top: 500px;
+
+}
+
+h1 {
+  color: white;
+}
+
+
 canvas {
   display: block;
+  margin-left: auto;
+  margin-right: auto;
 }
