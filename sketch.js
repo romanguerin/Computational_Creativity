@@ -1,5 +1,5 @@
 //cv-edge-detection computational creativity
-// code Roman Guerin, Floor Stolk
+// code Roman Guerin, Floor Stolk, iris
 let capture;
 let img;
 let buffer;
@@ -9,7 +9,7 @@ let w = 480,
 let rightBuffer, leftBuffer;
 let coordinates = [];
 let bool = true;
-//console.log(window)
+let altW;
 
 function setup() {
     //camera capture
@@ -24,7 +24,7 @@ function setup() {
         console.log('capture ready.')
     });
     capture.elt.setAttribute('playsinline', '');
-    // 800 x 400 (double width to make room for each "sub-canvas")
+    // 960 x 480 (double width to make room for each "sub-canvas")
     createCanvas(w*2, h);
     // Create both of your off-screen graphics buffers
     rightBuffer = createGraphics(w, h);
@@ -32,8 +32,8 @@ function setup() {
     capture.size(w, h);
     capture.hide();
     buffer = new jsfeat.matrix_t(w, h, jsfeat.U8C1_t);
-    //right drawing
-    //makeFunctionNodes();
+    //
+    altW = width/w;
 }
 
 function jsfeatToP5(src, dst) {
@@ -89,20 +89,20 @@ function colorDetection(numbX,numbY,xN,yN) {
     // load pixels
     loadPixels();
     let count = 0;
-    let cut = ((w*4)*2);
-    //paxel is new pixe;
+    let cut = ((w*4)*altW);
+    //paxel is new pixels;
     let paxel = [];
     for (let t = 0; t < pixels.length; t++) {
         if (count <= cut ) {
-            paxel.push(pixels[t]);
+            paxel.push(pixels[t]); //put pixels in new array
         } else if (count > (cut*2)-1){
-            count = 0;
-        }
+            count = 0; //recount
+            }
         count++
     }
     //plus for the extra screen
-  let xPixel = (4 * xN * 2);
-  let yPixel = ((yN*2)*(4 * w)*2) ;
+  let xPixel = (4 * xN * altW);
+  let yPixel = ((yN*2)*(4 * w)*altW) ;
   for (let i = 1; i < numbY; i++) {
       for (let j = 1; j < numbX; j++) {
           // loop over
@@ -129,14 +129,13 @@ function colorDetection(numbX,numbY,xN,yN) {
           }
       }
   }
-  paxel.length = 0;
+  paxel.length = 0; //empty array
 }
 
 function arraysEqual(a1,a2) {
     /* WARNING: arrays must not contain {objects} or behavior may be undefined */
     return JSON.stringify(a1)===JSON.stringify(a2);
 }
-
 
 function draw() {
     // Draw on your buffers however you like
@@ -145,7 +144,6 @@ function draw() {
     // Paint the off-screen buffers onto the main canvas
     image(leftBuffer, 0, 0);
     image(rightBuffer, 480, 0);
-    //ole.log(coordinates);
 }
 
 function drawLeftBuffer() {
@@ -174,26 +172,28 @@ function drawLeftBuffer() {
     }
 }
 
+//map to 3D
 function map3D(mapper){
     return map(mapper, 0, 480, 0, 9);
 }
 
 function drawRightBuffer() {
     makeFunctionNodes();
-    //console.log(nodesAxes);
     let backgroundColour = color(0, 0, 0);
     rightBuffer.background(backgroundColour); // overdraws the previous orientations at the loop rate
 
+    //do once
     if (bool === true){
     rightBuffer.translate(25, h/3.5);
     rightBuffer.scale(0.65);
     bool = false;
     }
-
+    //draw un 3D
     for (let i=0; i < nodes.length; i++) {
         let px = nodes[i][0];
         let py = nodes[i][1];
         let pz = ceil(nodes[i][2]);
+        console.log(nodes[i]);
         if (pz > 9){
             pz = 9;
         } else if ( pz < 0){
@@ -215,5 +215,26 @@ function drawRightBuffer() {
     rightBuffer.text("y",nodesAxes[2][0]*fscale,nodesAxes[2][1]*fscale);
     rightBuffer.line(nodesAxes[0][0]*fscale,nodesAxes[0][1]*fscale,nodesAxes[3][0]*fscale,nodesAxes[3][1]*fscale);
     rightBuffer.text("z",nodesAxes[3][0]*fscale,nodesAxes[3][1]*fscale);
+}
 
+function printToCSV(){
+    let table = new p5.Table();
+
+    //set table header
+    table.addColumn('point');
+    table.addColumn('x');
+    table.addColumn('y');
+    table.addColumn('z');
+
+    //load all values in table
+    let tableRow = table.addRow();
+    for (let i = 0; i < nodes.length; i++){
+        tableRow.setString('point', i);
+        tableRow.setString('x', nodes[i][0]);
+        tableRow.setString('y', nodes[i][1]);
+        tableRow.setString('z', nodes[i][2]);
+        tableRow = table.addRow();
+    }
+
+    saveTable(table, 'tableOutput', 'csv'); //could also be downloaded as tsv or html
 }
