@@ -182,7 +182,7 @@ function drawRightBuffer() {
     let backgroundColour = color(0, 0, 0);
     rightBuffer.background(backgroundColour); // overdraws the previous orientations at the loop rate
 
-    //do once
+    //do once to draw
     if (bool === true){
     rightBuffer.translate(25, h/3.5);
     rightBuffer.scale(0.65);
@@ -192,19 +192,20 @@ function drawRightBuffer() {
     for (let i=0; i < nodes.length; i++) {
         let px = nodes[i][0];
         let py = nodes[i][1];
-        let pz = ceil(nodes[i][2]);
-        console.log(nodes[i]);
+        //let pz = ceil(nodes[i][2]);
+        let pz = ceil(zAxes[i]);
         if (pz > 9){
             pz = 9;
         } else if ( pz < 0){
             pz = 0;
         }
+        console.log(pz);
         rightBuffer.fill(nodeColour[pz]);
         rightBuffer.noStroke();
         // the "pixels" are small rectangles which is faster than rendering small circles.
         rightBuffer.rect(px*fscale,py*fscale,nodeSize,nodeSize)
     }
-
+    zAxes.length = 0;
     // Draw axes
     rightBuffer.stroke('white');
     rightBuffer.fill('white');
@@ -235,6 +236,5 @@ function printToCSV(){
         tableRow.setString('z', nodes[i][2]);
         tableRow = table.addRow();
     }
-
     saveTable(table, 'tableOutput', 'csv'); //could also be downloaded as tsv or html
 }

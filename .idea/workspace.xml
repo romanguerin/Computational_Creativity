@@ -3,9 +3,8 @@
   <component name="ChangeListManager">
     <list default="true" id="92930a52-8802-4ec8-8a2c-8fb39bab261e" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/index.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/add.js" beforeDir="false" afterPath="$PROJECT_DIR$/add.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/sketch.js" beforeDir="false" afterPath="$PROJECT_DIR$/sketch.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/style.css" beforeDir="false" afterPath="$PROJECT_DIR$/style.css" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -95,7 +94,7 @@
       <workItem from="1638970960613" duration="1192000" />
       <workItem from="1638981936685" duration="7463000" />
       <workItem from="1639041328195" duration="24346000" />
-      <workItem from="1639131974604" duration="8472000" />
+      <workItem from="1639131974604" duration="13216000" />
     </task>
     <task id="LOCAL-00001" summary="3d added&#10;make sure screen is 1080p with 125% for now">
       <created>1639132113055</created>
@@ -111,7 +110,14 @@
       <option name="project" value="LOCAL" />
       <updated>1639132160389</updated>
     </task>
-    <option name="localTasksCounter" value="3" />
+    <task id="LOCAL-00003" summary="early weekend commit">
+      <created>1639146275460</created>
+      <option name="number" value="00003" />
+      <option name="presentableId" value="LOCAL-00003" />
+      <option name="project" value="LOCAL" />
+      <updated>1639146275460</updated>
+    </task>
+    <option name="localTasksCounter" value="4" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -119,7 +125,8 @@
   </component>
   <component name="VcsManagerConfiguration">
     <MESSAGE value="3d added&#10;make sure screen is 1080p with 125% for now" />
-    <option name="LAST_COMMIT_MESSAGE" value="3d added&#10;make sure screen is 1080p with 125% for now" />
+    <MESSAGE value="early weekend commit" />
+    <option name="LAST_COMMIT_MESSAGE" value="early weekend commit" />
   </component>
   <component name="WindowStateProjectService">
     <state x="572" y="199" key="#Web_Browsers" timestamp="1638971144181">
@@ -131,17 +138,19 @@
     </state>
     <state x="225" y="68" key="#com.intellij.execution.impl.EditConfigurationsDialog/0.0.1536.824/674.-1440.2048.1112@0.0.1536.824" timestamp="1639132365077" />
     <state x="225" y="68" key="#com.intellij.execution.impl.EditConfigurationsDialog/0.0.1536.824@0.0.1536.824" timestamp="1638971149734" />
-    <state x="386" y="0" key="CommitChangelistDialog2" timestamp="1639132159528">
+    <state x="386" y="0" key="CommitChangelistDialog2" timestamp="1639146274614">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
+    <state x="386" y="0" key="CommitChangelistDialog2/0.0.1536.824/-286.-1440.2048.1112@0.0.1536.824" timestamp="1639146274614" />
     <state x="386" y="0" key="CommitChangelistDialog2/0.0.1536.824/674.-1440.2048.1112@0.0.1536.824" timestamp="1639132159528" />
     <state x="550" y="168" key="FileChooserDialogImpl" timestamp="1638971122595">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
     <state x="550" y="168" key="FileChooserDialogImpl/0.0.1536.824@0.0.1536.824" timestamp="1638971122595" />
-    <state x="361" y="145" key="Vcs.Push.Dialog.v2" timestamp="1639132669953">
+    <state x="361" y="145" key="Vcs.Push.Dialog.v2" timestamp="1639146283937">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
+    <state x="361" y="145" key="Vcs.Push.Dialog.v2/0.0.1536.824/-286.-1440.2048.1112@0.0.1536.824" timestamp="1639146283937" />
     <state x="361" y="145" key="Vcs.Push.Dialog.v2/0.0.1536.824/674.-1440.2048.1112@0.0.1536.824" timestamp="1639132669953" />
     <state x="448" y="0" width="745" height="824" key="find.popup" timestamp="1639062157315">
       <screen x="0" y="0" width="1536" height="824" />

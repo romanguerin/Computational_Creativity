@@ -20,10 +20,17 @@ let yMax = 9;
 let dx = 0.2; // x distance between nodes
 let dy = 0.2; // y distance between nodes
 let nodes, nodesAxes;
+let zAxes = [];
 
 // the function to be plotted
 function f(x,y)	{
-    return (3*Math.sin(Math.sqrt(x*x+y*y)))/(Math.sqrt(x*x+y*y))+4;
+    let z = ((Math.sin(x/3.2)*9)+(Math.sin(y/3.2)*9)-10);
+    if (z < 0){z = 0}
+    return z;
+    //return ((Math.sin(x/3.2)*9)+(Math.sin(y/3.2)*9));
+    //return (3*Math.sin(Math.sqrt(x*x+y*y)))/(Math.sqrt(x*x+y*y))+4;
+    //return ((Math.sin(x/3.2)*9)+(Math.sin((y/-1.6)+4.7)*4.5-4.5));
+
 }
 
 function functionNodesConstructor() {
@@ -34,6 +41,7 @@ function functionNodesConstructor() {
     for (let i = 0; i < coordinates.length; i++){
         px = map3D(coordinates[i].x);
         py = map3D(coordinates[i].y);
+        zAxes.push(f(px,py));
         this.nodes[i] = [px, py, f(px,py)];
     }
 }
