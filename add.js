@@ -20,16 +20,61 @@ let yMax = 9;
 let dx = 0.2; // x distance between nodes
 let dy = 0.2; // y distance between nodes
 let nodes, nodesAxes;
-let zAxes = [];
+let zAxis = [];
+//let yArray = [];
 
-// the function to be plotted
-function f(x,y)	{
-    let z = ((Math.sin(x/3.2)*9)+(Math.sin(y/3.2)*9)-10);
-    if (z < 0){z = 0}
-    return z;
-    //return ((Math.sin(x/3.2)*9)+(Math.sin(y/3.2)*9));
-    //return (3*Math.sin(Math.sqrt(x*x+y*y)))/(Math.sqrt(x*x+y*y))+4;
-    //return ((Math.sin(x/3.2)*9)+(Math.sin((y/-1.6)+4.7)*4.5-4.5));
+function sortOnY() {
+    let sum = 1;
+    for (let i = 0; i < (coordinates.length); i++) {
+        for (let j = coordinates.length - 1; j > 0; j--) {
+            if (coordinates[i].y === coordinates[j].y && coordinates[i].scoreY === undefined && coordinates[j].scoreY === undefined) {
+                coordinates[i].scoreY = sum;
+                coordinates[j].scoreY = sum;
+                sum++;
+                break;
+            }
+        }
+        if (i < coordinates.length - 1) {
+            if (coordinates[i].y !== coordinates[i + 1].y) {
+                sum = 1;
+            }
+        }
+    }
+}
+
+function sortOnX(){
+    sortOnY();
+    let sum = 1;
+    coordinates.sort(function (a, b) {
+        return a.x - b.x;
+    })
+
+    for (let i = 0; i < (coordinates.length); i++){
+        for (let j = coordinates.length -1; j > 0; j--){
+            if (coordinates[i].x === coordinates[j].x && coordinates[i].scoreX === undefined && coordinates[j].scoreX === undefined){
+                coordinates[i].scoreX = sum;
+                coordinates[j].scoreX = sum;
+                sum++;
+                break;
+            }
+        }
+        if ( i < coordinates.length -1){
+            if (coordinates[i].x !== coordinates[i + 1].x){
+                sum = 1;
+            }
+        }
+    }
+}
+
+function zAxisPlot(i) {
+   let sum = (coordinates[i].scoreX + coordinates[i].scoreY)/2;
+    //let sum = coordinates[i].scoreY;
+    if (sum > 9){
+        sum = 9;
+    } else if ( sum < 0 || isNaN(sum) || sum === undefined){
+        sum = 0;
+    }
+    return sum
 
 }
 
@@ -38,11 +83,16 @@ function functionNodesConstructor() {
     this.nodes = new Array();
     let px = 0;
     let py = 0;
+    let pz = 0;
     for (let i = 0; i < coordinates.length; i++){
         px = map3D(coordinates[i].x);
         py = map3D(coordinates[i].y);
-        zAxes.push(f(px,py));
-        this.nodes[i] = [px, py, f(px,py)];
+        //new pz
+        //pz = coordinates[i].scoreX;
+        pz = zAxisPlot(i);
+        zAxis.push(pz);
+        // recheck
+        this.nodes[i] = [px, py, pz];
     }
 }
 
@@ -121,4 +171,21 @@ function rotateX3D(theta) {
     }
 }
 
+
+/*///////////////////////////////
+const browsers = [
+    { name: 1, year: 2008 },
+    { name: 2, year: 2004 },
+    { name: 3, year: 2004 },
+    { name: 1, year: 1995 },
+    { name: 1, year: 2004 },
+    { name: 2, year: 2015 }
+];
+
+let sorted = _.groupBy(browsers, 'year', 'name');
+//let sorted = _.sortBy(browsers, ['name', 'year'], ['asc', 'asc']);
+for (let i = 0; i < sorted.length; i++){
+    sorted[i] = _.sortBy(sorted[i], 'year', 'name');
+}
+console.log(sorted);*/
 
