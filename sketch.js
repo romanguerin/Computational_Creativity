@@ -9,7 +9,12 @@ let w = 480,
     h = 480;
 let coordinates = [];
 
+function preload() {
+    img = loadImage('assets/3d_plot.PNG');
+}
+
 function setup() {
+    //arr.push(coordinates);
     frameRate(10);
     capture = createCapture({
         audio: false,
@@ -95,7 +100,7 @@ function colorDetection(numbX,numbY,xN,yN) {
                 if (arrInd === 0) {
                     coordinates = [];
                 }
-                coordinates.push({'i': arrInd,'x': x, 'y': y })
+                coordinates.push({'i': arrInd++,'x': x, 'y': y })
                 arrInd++;
             } else {
                 fill(0);
@@ -110,7 +115,6 @@ function arraysEqual(a1,a2) {
 }
 
 function draw() {
-    console.log(coordinates);
     //console.log(coordinates.length,coordinates[floor(coordinates.length/2)]);
     image(capture, 0, 0, 480, 480);
     capture.loadPixels();
@@ -135,7 +139,7 @@ function draw() {
        // for (var i = 0; i < n; i++) {
        //     buffer.data[i] = 255 - buffer.data[i];
        // }
-
+        //console.log(arr);
         raster(rast);
     }
 }
