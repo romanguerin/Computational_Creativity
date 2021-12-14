@@ -2,10 +2,16 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="92930a52-8802-4ec8-8a2c-8fb39bab261e" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/assets/3d_plot.PNG" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/codeStyles/codeStyleConfig.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/codeStyles/codeStyleConfig.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/modules.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/modules.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/p5js-cv-edge-detection.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/p5js-cv-edge-detection.iml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/add.js" beforeDir="false" afterPath="$PROJECT_DIR$/add.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/index.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/p5.min.js" beforeDir="false" afterPath="$PROJECT_DIR$/p5.min.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/package.json" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/sketch.js" beforeDir="false" afterPath="$PROJECT_DIR$/sketch.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/sketch2.js" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/style.css" beforeDir="false" afterPath="$PROJECT_DIR$/style.css" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -13,8 +19,17 @@
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
     <option name="LAST_RESOLUTION" value="IGNORE" />
   </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="JavaScript File" />
+        <option value="package.json" />
+      </list>
+    </option>
+  </component>
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+    <option name="UPDATE_TYPE" value="REBASE" />
   </component>
   <component name="MarkdownSettingsMigration">
     <option name="stateVersion" value="1" />
@@ -26,28 +41,59 @@
   </component>
   <component name="PropertiesComponent">
     <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
+    <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
+    <property name="javascript.nodejs.core.library.configured.version" value="14.17.0" />
+    <property name="javascript.nodejs.core.library.typings.version" value="14.17.0" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/old" />
     <property name="nodejs_interpreter_path.stuck_in_default_project" value="undefined stuck path" />
     <property name="nodejs_npm_path_reset_for_default_project" value="true" />
+    <property name="nodejs_package_manager_path" value="npm" />
     <property name="vue.rearranger.settings.migration" value="true" />
   </component>
   <component name="RecentsManager">
     <key name="MoveFile.RECENT_KEYS">
+      <recent name="C:\Users\roman\WebstormProjects\p5js-cv-edge-detection-master_2\old" />
       <recent name="C:\Users\roman\WebstormProjects\p5js-cv-edge-detection\assets" />
       <recent name="C:\Users\roman\WebstormProjects\p5js-cv-edge-detection" />
     </key>
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="C:\Users\roman\WebstormProjects\p5js-cv-edge-detection\old" />
+      <recent name="C:\Users\roman\WebstormProjects\p5js-cv-edge-detection-master_2\old" />
+      <recent name="C:\Users\roman\WebstormProjects\p5js-cv-edge-detection-master_2" />
+    </key>
   </component>
-  <component name="RunManager" selected="JavaScript Debug.index.html">
+  <component name="RunManager" selected="JavaScript Debug.index.html (1)">
+    <configuration name="index.html (1)" type="JavascriptDebugType" temporary="true" nameIsGenerated="true" uri="http://localhost:63342/p5js-cv-edge-detection/index.html" useBuiltInWebServerPort="true">
+      <method v="2" />
+    </configuration>
+    <configuration name="index.html" type="JavascriptDebugType" temporary="true" nameIsGenerated="true" engineId="19605856-d360-4d6a-943a-a3bf3b1c2758" uri="http://localhost:63342/p5js-cv-edge-detection-master_2/index.html" useBuiltInWebServerPort="true">
+      <method v="2" />
+    </configuration>
+    <configuration name="index.html" type="JavascriptDebugType" temporary="true" nameIsGenerated="true" uri="http://localhost:63342/p5js-cv-edge-detection/index.html" useBuiltInWebServerPort="true">
+      <method v="2" />
+    </configuration>
+    <configuration name="index.html" type="JavascriptDebugType" temporary="true" nameIsGenerated="true" uri="http://localhost:63342/p5js-cv-edge-detection/index.html" useBuiltInWebServerPort="true">
+      <method v="2" />
+    </configuration>
     <configuration name="index.html" type="JavascriptDebugType" temporary="true" nameIsGenerated="true" uri="http://localhost:63343/p5js-cv-edge-detection/index.html" useBuiltInWebServerPort="true">
       <method v="2" />
     </configuration>
     <configuration name="sketch.js" type="NodeJSConfigurationType" temporary="true" nameIsGenerated="true" path-to-js-file="$PROJECT_DIR$/sketch.js" working-dir="$PROJECT_DIR$">
       <method v="2" />
     </configuration>
+    <list>
+      <item itemvalue="JavaScript Debug.index.html" />
+      <item itemvalue="JavaScript Debug.index.html (1)" />
+      <item itemvalue="Node.js.sketch.js" />
+    </list>
     <recent_temporary>
       <list>
+        <item itemvalue="JavaScript Debug.index.html (1)" />
         <item itemvalue="JavaScript Debug.index.html" />
-        <item itemvalue="Node.js.sketch.js" />
+        <item itemvalue="JavaScript Debug.index.html" />
+        <item itemvalue="JavaScript Debug.index.html" />
+        <item itemvalue="JavaScript Debug.index.html" />
       </list>
     </recent_temporary>
   </component>
@@ -67,10 +113,105 @@
       <workItem from="1638546388046" duration="1506000" />
       <workItem from="1638549265074" duration="1314000" />
       <workItem from="1638624869039" duration="7870000" />
+      <workItem from="1638905056922" duration="4948000" />
+      <workItem from="1638970960613" duration="1192000" />
+      <workItem from="1638981936685" duration="7463000" />
+      <workItem from="1639041328195" duration="24346000" />
+      <workItem from="1639131974604" duration="22855000" />
+      <workItem from="1639321711522" duration="595000" />
+      <workItem from="1639324199098" duration="15181000" />
+      <workItem from="1639426764325" duration="3276000" />
     </task>
+    <task id="LOCAL-00001" summary="3d added&#10;make sure screen is 1080p with 125% for now">
+      <created>1639132113055</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1639132113055</updated>
+    </task>
+    <task id="LOCAL-00002" summary="3d added&#10;make sure screen is 1080p with 125% for now">
+      <created>1639132160389</created>
+      <option name="number" value="00002" />
+      <option name="presentableId" value="LOCAL-00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1639132160389</updated>
+    </task>
+    <task id="LOCAL-00003" summary="early weekend commit">
+      <created>1639146275460</created>
+      <option name="number" value="00003" />
+      <option name="presentableId" value="LOCAL-00003" />
+      <option name="project" value="LOCAL" />
+      <updated>1639146275460</updated>
+    </task>
+    <task id="LOCAL-00004" summary="sunday morning commit">
+      <created>1639297277953</created>
+      <option name="number" value="00004" />
+      <option name="presentableId" value="LOCAL-00004" />
+      <option name="project" value="LOCAL" />
+      <updated>1639297277953</updated>
+    </task>
+    <option name="localTasksCounter" value="5" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
     <option name="version" value="3" />
+  </component>
+  <component name="VcsManagerConfiguration">
+    <MESSAGE value="3d added&#10;make sure screen is 1080p with 125% for now" />
+    <MESSAGE value="early weekend commit" />
+    <MESSAGE value="sunday morning commit" />
+    <option name="LAST_COMMIT_MESSAGE" value="sunday morning commit" />
+  </component>
+  <component name="WindowStateProjectService">
+    <state x="572" y="199" key="#Web_Browsers" timestamp="1638971144181">
+      <screen x="0" y="0" width="1536" height="824" />
+    </state>
+    <state x="572" y="199" key="#Web_Browsers/0.0.1536.824@0.0.1536.824" timestamp="1638971144181" />
+    <state x="225" y="68" key="#com.intellij.execution.impl.EditConfigurationsDialog" timestamp="1639324300772">
+      <screen x="0" y="0" width="1536" height="824" />
+    </state>
+    <state x="225" y="68" key="#com.intellij.execution.impl.EditConfigurationsDialog/0.0.1536.824/-286.-1440.2048.1112@0.0.1536.824" timestamp="1639324300772" />
+    <state x="225" y="68" key="#com.intellij.execution.impl.EditConfigurationsDialog/0.0.1536.824/674.-1440.2048.1112@0.0.1536.824" timestamp="1639132365077" />
+    <state x="225" y="68" key="#com.intellij.execution.impl.EditConfigurationsDialog/0.0.1536.824@0.0.1536.824" timestamp="1638971149734" />
+    <state x="386" y="0" key="CommitChangelistDialog2" timestamp="1639297277183">
+      <screen x="0" y="0" width="1536" height="824" />
+    </state>
+    <state x="386" y="0" key="CommitChangelistDialog2/0.0.1536.824/-286.-1440.2048.1112@0.0.1536.824" timestamp="1639146274614" />
+    <state x="386" y="0" key="CommitChangelistDialog2/0.0.1536.824/674.-1440.2048.1112@0.0.1536.824" timestamp="1639132159528" />
+    <state x="386" y="0" key="CommitChangelistDialog2/0.0.1536.824@0.0.1536.824" timestamp="1639297277183" />
+    <state x="550" y="168" key="FileChooserDialogImpl" timestamp="1638971122595">
+      <screen x="0" y="0" width="1536" height="824" />
+    </state>
+    <state x="550" y="168" key="FileChooserDialogImpl/0.0.1536.824@0.0.1536.824" timestamp="1638971122595" />
+    <state width="1515" height="210" key="GridCell.Tab.0.bottom" timestamp="1639340145801">
+      <screen x="0" y="0" width="1536" height="824" />
+    </state>
+    <state width="1515" height="210" key="GridCell.Tab.0.bottom/0.0.1536.824/-286.-1440.2048.1112@0.0.1536.824" timestamp="1639336714344" />
+    <state width="1515" height="210" key="GridCell.Tab.0.bottom/0.0.1536.824@0.0.1536.824" timestamp="1639340145801" />
+    <state width="1515" height="210" key="GridCell.Tab.0.center" timestamp="1639340145801">
+      <screen x="0" y="0" width="1536" height="824" />
+    </state>
+    <state width="1515" height="210" key="GridCell.Tab.0.center/0.0.1536.824/-286.-1440.2048.1112@0.0.1536.824" timestamp="1639336714344" />
+    <state width="1515" height="210" key="GridCell.Tab.0.center/0.0.1536.824@0.0.1536.824" timestamp="1639340145801" />
+    <state width="1515" height="210" key="GridCell.Tab.0.left" timestamp="1639340145801">
+      <screen x="0" y="0" width="1536" height="824" />
+    </state>
+    <state width="1515" height="210" key="GridCell.Tab.0.left/0.0.1536.824/-286.-1440.2048.1112@0.0.1536.824" timestamp="1639336714343" />
+    <state width="1515" height="210" key="GridCell.Tab.0.left/0.0.1536.824@0.0.1536.824" timestamp="1639340145801" />
+    <state width="1515" height="210" key="GridCell.Tab.0.right" timestamp="1639340145801">
+      <screen x="0" y="0" width="1536" height="824" />
+    </state>
+    <state width="1515" height="210" key="GridCell.Tab.0.right/0.0.1536.824/-286.-1440.2048.1112@0.0.1536.824" timestamp="1639336714344" />
+    <state width="1515" height="210" key="GridCell.Tab.0.right/0.0.1536.824@0.0.1536.824" timestamp="1639340145801" />
+    <state x="361" y="145" key="Vcs.Push.Dialog.v2" timestamp="1639297280389">
+      <screen x="0" y="0" width="1536" height="824" />
+    </state>
+    <state x="361" y="145" key="Vcs.Push.Dialog.v2/0.0.1536.824/-286.-1440.2048.1112@0.0.1536.824" timestamp="1639146283937" />
+    <state x="361" y="145" key="Vcs.Push.Dialog.v2/0.0.1536.824/674.-1440.2048.1112@0.0.1536.824" timestamp="1639132669953" />
+    <state x="361" y="145" key="Vcs.Push.Dialog.v2/0.0.1536.824@0.0.1536.824" timestamp="1639297280389" />
+    <state x="448" y="0" width="745" height="824" key="find.popup" timestamp="1639062157315">
+      <screen x="0" y="0" width="1536" height="824" />
+    </state>
+    <state x="448" y="0" width="745" height="824" key="find.popup/0.0.1536.824@0.0.1536.824" timestamp="1639062157315" />
   </component>
 </project>

@@ -9,13 +9,23 @@
 </head>
 
 <body>
-    <div class="title"><h1>P5js cv edge detector</h1></div>
+    <div class="title"><h1>Physical</h1></div>
+    <div class="alert">
+        <span class="closebtn" onclick="this.parentElement.style.display='none';">&times;</span>
+        <strong>Hi!</strong> Please change your screen settings to <strong>1920x1080p</strong>
+        with a scale of <strong>125%</strong> if there is any problem.
+    </div>
     <div class="main">
         <p>Blur Size: <input type="range" id="blurSize" value="50"></p>
         <p>Low Threshold: <input type="range" id="lowThreshold" value="15"></p>
         <p>High Threshold: <input type="range" id="highThreshold" value="25"></p>
         <p>Raster: <input type="range" id="raster" value="40"></p>
+        <button onclick="resetRange()">Reset</button>
+    </div>
+    <div class="saveButton">
+        <p>Export co-creation to CSV file: <button onclick="printToCSV()">Save File</button></p>
     </div>
     <script src="sketch.js"></script>
+    <script src="add.js"></script>
 </body>
 </html>
