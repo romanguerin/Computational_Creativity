@@ -21,8 +21,8 @@ let dx = 0.2; // x distance between nodes
 let dy = 0.2; // y distance between nodes
 let nodes, nodesAxes;
 let zAxis = [];
-//let yArray = [];
 
+// point system Y
 function sortOnY() {
     let sum = 1;
     for (let i = 0; i < (coordinates.length); i++) {
@@ -42,6 +42,7 @@ function sortOnY() {
     }
 }
 
+// point system X
 function sortOnX(){
     sortOnY();
     let sum = 1;
@@ -66,9 +67,10 @@ function sortOnX(){
     }
 }
 
+//plot Z axis
 function zAxisPlot(i) {
+    //substract two points systems
    let sum = (coordinates[i].scoreX + coordinates[i].scoreY)/2;
-    //let sum = coordinates[i].scoreY;
     if (sum > 9){
         sum = 9;
     } else if ( sum < 0 || isNaN(sum) || sum === undefined){
@@ -79,7 +81,7 @@ function zAxisPlot(i) {
 }
 
 function functionNodesConstructor() {
-    // filling the nodes array with function points [x,y,z] where z = f(x,y).
+    // filling the nodes array with function points [x,y,z] where z = zAxis
     this.nodes = new Array();
     let px = 0;
     let py = 0;
@@ -107,7 +109,6 @@ function makeFunctionNodes() {
 
 // Rotate shape around the z-axis
 function rotateZ3D(theta) {
-    //if (window.console && window.console.log) { console.log("rotZ="+theta) }
     let sinTheta = Math.sin(theta);
     let cosTheta = Math.cos(theta);
 
@@ -129,7 +130,6 @@ function rotateZ3D(theta) {
 
 // Rotate shape around the y-axis
 function rotateY3D(theta) {
-    //if (window.console && window.console.log) { console.log("rotY="+theta) }
     let sinTheta = Math.sin(-theta);
     let cosTheta = Math.cos(-theta);
 
@@ -151,7 +151,6 @@ function rotateY3D(theta) {
 
 // Rotate shape around the x-axis
 function rotateX3D(theta) {
-    //if (window.console && window.console.log) { console.log("rotX="+theta) }
     let sinTheta = Math.sin(-theta);
     let cosTheta = Math.cos(-theta);
 

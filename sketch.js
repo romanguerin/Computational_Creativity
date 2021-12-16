@@ -1,5 +1,4 @@
 //cv-edge-detection computational creativity
-// code Roman Guerin, Floor Stolk
 let capture;
 let img;
 let buffer;
@@ -9,7 +8,6 @@ let w = 480,
 let rightBuffer, leftBuffer;
 let coordinates = [];
 let bool = true;
-//console.log(window)
 
 function setup() {
     //camera capture
@@ -33,8 +31,6 @@ function setup() {
     capture.hide();
     buffer = new jsfeat.matrix_t(w, h, jsfeat.U8C1_t);
     //right drawing
-    //makeFunctionNodes();
-
 }
 
 function jsfeatToP5(src, dst) {
@@ -70,13 +66,6 @@ function raster(rastNumb) {
     let yN = floor(h/numbY);
     //detect colors
     colorDetection(numbX,numbY,xN,yN);
-    //draw raster
-    for (let i = 1; i < numbX; i++){
-        //line(xN*i, 0, xN*i, h);
-    }
-    for (let j = 1; j < numbY; j++){
-        //line(0, yN*j, w, yN*j);
-    }
 }
 
 function colorDetection(numbX,numbY,xN,yN) {
@@ -92,7 +81,7 @@ function colorDetection(numbX,numbY,xN,yN) {
     loadPixels();
     let count = 0;
     let cut = ((w*4)*2);
-    //paxel is new pixe;
+    //paxel is new pixel;
     let paxel = [];
     for (let t = 0; t < pixels.length; t++) {
         if (count <= cut ) {
@@ -115,8 +104,7 @@ function colorDetection(numbX,numbY,xN,yN) {
             rgba[1] = paxel[index + 1];
             rgba[2] = paxel[index + 2];
             rgba[3] = paxel[index + 3];
-
-            //console.log('pixel:',x,y,"color",r,g,b,a);
+            //pixel checker
             if (!arraysEqual(black.levels,rgba)){
                 fill(c);
                 ellipse(x, y, 6);
@@ -139,7 +127,6 @@ function arraysEqual(a1,a2) {
     return JSON.stringify(a1)===JSON.stringify(a2);
 }
 
-
 function draw() {
     // Draw on your buffers however you like
     drawLeftBuffer();
@@ -147,27 +134,25 @@ function draw() {
     // Paint the off-screen buffers onto the main canvas
     image(leftBuffer, 0, 0);
     image(rightBuffer, 480, 0);
-    //ole.log(coordinates);
 }
 
 function drawLeftBuffer() {
-    //console.log(coordinates.length,coordinates[floor(coordinates.length/2)]);
     image(capture, 0, 0, 480, 480);
     capture.loadPixels();
     if (capture.pixels.length > 0) { // don't forget this!
         result = jsfeatToP5(buffer, result);
         image(result, 0, 0, 480, 480)
-
+        //initiate sliders
         let blurSize = select('#blurSize').elt.value;
         let lowThreshold = select('#lowThreshold').elt.value;
         let highThreshold = select('#highThreshold').elt.value;
         let rast = select('#raster').elt.value;
-
-        blurSize = map(blurSize, 0, 100, 1, 12);
-        lowThreshold = map(lowThreshold, 0, 100, 0, 255);
-        highThreshold = map(highThreshold, 0, 100, 0, 255);
+        //map sliders
+        blurSize = map(blurSize, 0, 100, 1, 10); //max 12
+        lowThreshold = map(lowThreshold, 0, 100, 0, 155); // max 255
+        highThreshold = map(highThreshold, 0, 100, 0, 155); //max 255
         rast = map(rast, 0, 100, 10, 60);
-
+        //use openCV
         jsfeat.imgproc.grayscale(capture.pixels, w, h, buffer);
         jsfeat.imgproc.gaussian_blur(buffer, buffer, blurSize, 0);
         jsfeat.imgproc.canny(buffer, buffer, lowThreshold, highThreshold);
@@ -177,6 +162,7 @@ function drawLeftBuffer() {
 }
 
 function map3D(mapper){
+    //map
     return map(mapper, 0, 480, 0, 9);
 }
 
@@ -192,11 +178,10 @@ function drawRightBuffer() {
         rightBuffer.scale(0.65);
         bool = false;
     }
-
     for (let i=0; i < nodes.length; i++) {
         let px = nodes[i][0];
         let py = nodes[i][1];
-        let pz = floor(zAxis[i]);
+        let pz = floor(zAxis[i]); //floor axis
         rightBuffer.fill(nodeColour[pz]);
         rightBuffer.noStroke();
         // the "pixels" are small rectangles which is faster than rendering small circles.
@@ -204,7 +189,6 @@ function drawRightBuffer() {
     }
     //empty z axis
     zAxis.length = 0;
-
     // Draw axes
     rightBuffer.stroke('white');
     rightBuffer.fill('white');
@@ -215,9 +199,7 @@ function drawRightBuffer() {
     rightBuffer.text("y",nodesAxes[2][0]*fscale,nodesAxes[2][1]*fscale);
     rightBuffer.line(nodesAxes[0][0]*fscale,nodesAxes[0][1]*fscale,nodesAxes[3][0]*fscale,nodesAxes[3][1]*fscale);
     rightBuffer.text("z",nodesAxes[3][0]*fscale,nodesAxes[3][1]*fscale);
-
 }
-
 
 //change slider
 function cSystem() {
@@ -253,8 +235,6 @@ function cSystem() {
     document.getElementById("raster").value = raster.toString();
 }
 
-
-
 function printToCSV(){
     coordinates.sort(function (a, b) {
         return a.i - b.i;
@@ -266,7 +246,6 @@ function printToCSV(){
     table.addColumn('x');
     table.addColumn('y');
     table.addColumn('z');
-
     //load all values in table
     let tableRow = table.addRow();
     for (let i = 0; i < coordinates.length; i++){
@@ -276,8 +255,6 @@ function printToCSV(){
         tableRow.setString('z', floor(map(zAxisPlot(i),0,9,0,480)));
         tableRow = table.addRow();
     }
-
     saveTable(table, 'tableOutput', 'csv'); //could also be downloaded as tsv or html
-
 }
 
