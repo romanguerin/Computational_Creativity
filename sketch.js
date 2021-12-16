@@ -13,7 +13,7 @@ let bool = true;
 
 function setup() {
     //camera capture
-    frameRate(10);
+    frameRate(25);
     capture = createCapture({
         audio: false,
         video: {
@@ -72,19 +72,11 @@ function raster(rastNumb) {
     colorDetection(numbX,numbY,xN,yN);
     //draw raster
     for (let i = 1; i < numbX; i++){
-        line(xN*i, 0, xN*i, h);
+        //line(xN*i, 0, xN*i, h);
     }
     for (let j = 1; j < numbY; j++){
-        line(0, yN*j, w, yN*j);
+        //line(0, yN*j, w, yN*j);
     }
-}
-
-function resetRange(){
-    //reset all values
-    document.getElementById("blurSize").value = "50";
-    document.getElementById("lowThreshold").value = "15"
-    document.getElementById("highThreshold").value = "25"
-    document.getElementById("raster").value = "40"
 }
 
 function colorDetection(numbX,numbY,xN,yN) {
@@ -94,7 +86,8 @@ function colorDetection(numbX,numbY,xN,yN) {
     let index = 0;
     let rgba = [];
     let black = color('rgba(0,0,0,1)');
-    let c = color(255, 0, 0);
+    let c = color(255, 69, 0);
+    noStroke();
     // load pixels
     loadPixels();
     let count = 0;
@@ -188,10 +181,9 @@ function map3D(mapper){
 }
 
 function drawRightBuffer() {
-    sortOnX();
-    //console.log(coordinates);
-    makeFunctionNodes();
-    //console.log(nodesAxes);
+    sortOnX(); //point system
+    makeFunctionNodes(); //initiate points
+    cSystem(); //creative system
     let backgroundColour = color(0, 0, 0);
     rightBuffer.background(backgroundColour); // overdraws the previous orientations at the loop rate
 
@@ -226,13 +218,49 @@ function drawRightBuffer() {
 
 }
 
+
+//change slider
+function cSystem() {
+    let raster = parseInt(document.getElementById("raster").value)
+    let blur = parseInt(document.getElementById("blurSize").value)
+    let lowT = parseInt(document.getElementById("lowThreshold").value)
+    let highT = parseInt(document.getElementById("highThreshold").value)
+
+    //array highest values
+    let upper = [];
+    for (let i = 0; i < zAxis.length; i++) {
+        if (zAxis[i] > 7) {
+            upper.push(zAxis[i]);
+        }
+    }
+    //change raster
+    if (upper.length < 1) {
+        raster = raster + 10;
+    } else if (upper.length > 45) {
+        raster = raster - 10;
+    } else {
+        raster = document.getElementById("raster").value;
+    }
+    //mutator
+    blur = blur + Math.floor(Math.random()*5)-2;
+    lowT = lowT + Math.floor(Math.random()*3)-1;
+    highT = highT + Math.floor(Math.random()*3)-1;
+
+    //change values
+    document.getElementById("blurSize").value =  blur.toString();
+    document.getElementById("lowThreshold").value = lowT.toString();
+    document.getElementById("highThreshold").value = highT.toString();
+    document.getElementById("raster").value = raster.toString();
+}
+
+
+
 function printToCSV(){
     coordinates.sort(function (a, b) {
         return a.i - b.i;
     })
 
     table = new p5.Table();
-
     //set table header
     table.addColumn('point');
     table.addColumn('x');

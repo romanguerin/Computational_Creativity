@@ -170,22 +170,3 @@ function rotateX3D(theta) {
         node[2] = z * cosTheta + y * sinTheta;
     }
 }
-
-
-/*///////////////////////////////
-const browsers = [
-    { name: 1, year: 2008 },
-    { name: 2, year: 2004 },
-    { name: 3, year: 2004 },
-    { name: 1, year: 1995 },
-    { name: 1, year: 2004 },
-    { name: 2, year: 2015 }
-];
-
-let sorted = _.groupBy(browsers, 'year', 'name');
-//let sorted = _.sortBy(browsers, ['name', 'year'], ['asc', 'asc']);
-for (let i = 0; i < sorted.length; i++){
-    sorted[i] = _.sortBy(sorted[i], 'year', 'name');
-}
-console.log(sorted);*/
-

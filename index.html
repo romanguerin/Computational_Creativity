@@ -9,23 +9,62 @@
 </head>
 
 <body>
-    <div class="title"><h1>Physical</h1></div>
-    <div class="alert">
-        <span class="closebtn" onclick="this.parentElement.style.display='none';">&times;</span>
-        <strong>Hi!</strong> Please change your screen settings to <strong>1920x1080p</strong>
-        with a scale of <strong>125%</strong> if there is any problem.
+<div class="title"><h1>PHYGITAL CLAYING SYSTEM</h1></div>
+<div class="underTitle"><p>Visual based co-creative system for generating 3D sculptures</p></div>
+<div class="infoButton"><span style="font-size:60px;cursor:pointer" onclick="openNav()">&#9776;</span></div>
+
+<div class="alert">
+    <span class="closebtn" onclick="this.parentElement.style.display='none';">&times;</span>
+    <strong>Hi!</strong> Please change your screen settings to <strong>1920x1080p</strong>
+    with a scale of <strong>125%</strong> if there is any problem.
+</div>
+
+<div class="leftContainer"></div>
+<div class="leftIcons">
+    <p>Position cam:</p>
+    <p><img src="assets/21-CC-Ass3_icons-02.png" alt="rotate" style="width:100px;height:100px;" class="invert"></p>
+    <p>Move object:</p>
+    <p><img src="assets/21-CC-Ass3_icons-03.png" alt="move" style="width:100px;height:100px;" class="invert"></p>
+    <p>Add objects:</p>
+    <p><img src="assets/21-CC-Ass3_icons-04.png" alt="add" style="width:100px;height:100px;" class="invert"></p>
+</div>
+<!--<div class="resetButton" onclick="resetRange()"><p> Reset </p></div>-->
+<div class="rightContainer"></div>
+<div class="rightIndexTop">z = 10</div>
+<div class="rightIndexBottom">z = 0</div>
+<div class="rightColorIndex"></div>
+<div class="rightSliders">
+    <p>Blur Size:</p><p><input type="range" id="blurSize" value="50"></p>
+    <p>Low Threshold: </p><p><input type="range" id="lowThreshold" value="15"></p>
+    <p>High Threshold: </p><p><input type="range" id="highThreshold" value="25"></p>
+    <p>Points:</p><p><input type="range" id="raster" value="40"></p>
+</div>
+
+<button class="saveButton" onclick="printToCSV()" role="button">Save as CSV</button>
+<div id="myNav" class="overlay">
+    <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
+    <div class="overlay-content">
+        <p> check this out for information </p>
     </div>
-    <div class="main">
-        <p>Blur Size: <input type="range" id="blurSize" value="50"></p>
-        <p>Low Threshold: <input type="range" id="lowThreshold" value="15"></p>
-        <p>High Threshold: <input type="range" id="highThreshold" value="25"></p>
-        <p>Raster: <input type="range" id="raster" value="40"></p>
-        <button onclick="resetRange()">Reset</button>
-    </div>
-    <div class="saveButton">
-        <p>Export co-creation to CSV file: <button onclick="printToCSV()">Save File</button></p>
-    </div>
-    <script src="sketch.js"></script>
-    <script src="add.js"></script>
+</div>
+
+<script>
+    document.getElementById("raster").disabled = true;
+    document.getElementById("blurSize" ).disabled = true;
+    document.getElementById("lowThreshold").disabled = true;
+    document.getElementById( "highThreshold" ).disabled = true;
+    function openNav() {
+        document.getElementById("myNav").style.width = "100%";
+    }
+    function closeNav() {
+        document.getElementById("myNav").style.width = "0%";
+    }
+</script>
+
+<style>
+    @import url('https://fonts.googleapis.com/css2?family=Bakbak+One&display=swap');
+</style>
+<script src="sketch.js"></script>
+<script src="add.js"></script>
 </body>
 </html>
